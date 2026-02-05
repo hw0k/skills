@@ -1,5 +1,8 @@
 # Claude Code session-specific files
-.claude/
+.claude/*
+!.claude/skills/
+!.claude/commands/
+!.claude/settings.json
 
 # Python
 __pycache__/
