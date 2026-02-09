@@ -83,6 +83,29 @@ Skills use a three-level loading system:
 # 2. Creates a .skill file (zip with .skill extension) if validation passes
 ```
 
+## Engineering Principles
+
+### Decision Authority
+- The final decision-maker for all decisions is the user.
+- When an irreversible decision is needed (e.g., skill architecture, breaking changes to SKILL.md schema), do not judge right or wrong on your own. Instead, provide comparison materials and delegate the decision to the user.
+
+### No Premature Abstraction
+- Do not abstract preemptively. Wait until there are concrete, repeated use cases before introducing abstractions.
+- 1 occurrence: just write it inline
+- 2 occurrences: note the duplication, tolerate it
+- 3 occurrences: now the pattern is clear — extract it
+
+### Atomic Commits
+- Every commit should target the smallest unit of change.
+- Every commit must be in a state where validation (`quick_validate.py`) passes.
+- All commits must follow Conventional Commits (`feat:`, `fix:`, `refactor:`, `chore:`, `docs:`).
+
+### Single-Concern Pull Requests
+- Every Pull Request should address exactly one concern.
+
+### Prefer Static Verification over Self-Review
+- Instead of ambiguous self-review, rely on `quick_validate.py` and `package_skill.py` to verify skill correctness.
+
 ## Key Principles
 
 ### Conciseness
