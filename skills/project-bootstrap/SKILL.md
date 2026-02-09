@@ -54,10 +54,6 @@ Write CLAUDE.md at the project root. Structure it as follows:
 ### Single-Concern Pull Requests
 - Every Pull Request should address exactly one concern.
 
-### CLAUDE.md Size Limit
-- CLAUDE.md must be kept under 200 lines.
-- Content exceeding this limit should be split into markdown files under the `agent-references/` directory and referenced from CLAUDE.md.
-
 ### Prefer Static Verification over Self-Review
 - Instead of ambiguous self-review, set up and rely on CI, Lint, Test, and other static checks.
 
@@ -65,11 +61,13 @@ Write CLAUDE.md at the project root. Structure it as follows:
 [Only if detectable from existing config — do not invent rules]
 ```
 
+For concrete good/bad examples of **Decision Authority**, **No Premature Abstraction**, and **Atomic Commits**, see [references/principle-examples.md](references/principle-examples.md). When generating CLAUDE.md for a project, include or adapt relevant examples from that file to make the principles actionable.
+
 ### 3. Adaptation Rules
 
 - **Existing CLAUDE.md**: Merge principles into the existing file. Do not overwrite project-specific content (commands, architecture notes) that is already there.
 - **Monorepo**: Add a note about per-package structure if relevant.
-- **Non-frontend projects**: The principles are stack-agnostic. Adapt examples to the detected stack (e.g., for a Go project, "Separation of Concerns" examples reference packages, not React components).
+- **Non-frontend projects**: The principles are stack-agnostic. Adapt examples to the detected stack.
 - **Development Commands**: Only list commands that actually exist in the project. Run detection (e.g., check `package.json` scripts) rather than guessing.
 
 ### 4. Keep It Concise
